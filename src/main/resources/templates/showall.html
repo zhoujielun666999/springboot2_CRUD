@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <a href="add">增加动物</a>
+    <table border="1px">
+        <tr>
+            <td>编号</td>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>类型</td>
+            <td>操作</td>
+        </tr>
+        <tr th:each="xyz:${list}">
+            <td th:text="${xyz.id}"></td>
+            <td th:text="${xyz.name}"></td>
+            <td th:text="${xyz.age}"></td>
+            <td th:text="${xyz.type}"></td>
+            <td>
+                <a th:href="@{/delete(id=${xyz.id})}">删除</a>
+                <a th:href="@{/updateSelect(id=${xyz.id})}">修改</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

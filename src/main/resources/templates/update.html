@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="update" method="post">
+        编号:<span th:text="${animals.id}"></span>
+        <input type="hidden" th:value="${animals.id}" name="id"><br>
+        姓名:<input type="text" th:value="${animals.name}" name="name"><br>
+        年龄:<input type="text" th:value="${animals.age}" name="age"><br>
+        类型:<input type="text" th:value="${animals.type}" name="type"><br>
+        <input type="submit" value="修改">
+    </form>
+</body>
+</html>

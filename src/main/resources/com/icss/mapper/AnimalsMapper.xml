@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.icss.dao.AnimalsMapper">
+    <!--public ArrayList<Animals> selectAllDAO();-->
+   <select id="selectAllDAO" resultType="com.icss.vo.Animals">
+       select * from animals
+   </select>
+    <delete id="deleteDAO">
+        delete from animals where id = #{id}
+    </delete>
+
+    <select id="updateSelectDAO" resultType="com.icss.vo.Animals">
+        select *
+        from animals where id = #{id}
+    </select>
+
+    <update id="updateDAO">
+        update animals set name = #{name},age = #{age},type=#{type}
+        where id = #{id}
+    </update>
+
+    <insert id="addDAO">
+        insert into animals(name,age,type)
+        values (#{name},#{age},#{type})
+    </insert>
+</mapper>
